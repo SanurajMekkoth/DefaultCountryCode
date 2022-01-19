@@ -1,0 +1,22 @@
+PODS:
+  - default_country_code (0.0.1):
+    - Flutter
+  - Flutter (1.0.0)
+
+DEPENDENCIES:
+  - default_country_code (from `.symlinks/plugins/default_country_code/ios`)
+  - Flutter (from `Flutter`)
+
+EXTERNAL SOURCES:
+  default_country_code:
+    :path: ".symlinks/plugins/default_country_code/ios"
+  Flutter:
+    :path: Flutter
+
+SPEC CHECKSUMS:
+  default_country_code: c0dc8e9805c7e843c565e087b5807e33e8039fb8
+  Flutter: 434fef37c0980e73bb6479ef766c45957d4b510c
+
+PODFILE CHECKSUM: aafe91acc616949ddb318b77800a7f51bffa2a4c
+
+COCOAPODS: 1.11.2
