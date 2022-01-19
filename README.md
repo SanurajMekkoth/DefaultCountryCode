@@ -1,6 +1,6 @@
-# default_country_code
+# Default country code
 
-Default country code plugin.
+This plugin provides the ISO country code name from SIM, Network and the system locale.
 
 ## Getting Started
 
