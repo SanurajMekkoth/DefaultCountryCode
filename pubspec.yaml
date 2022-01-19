@@ -1,9 +1,6 @@
 name: default_country_code
 description: This plugin provides the ISO country code name from SIM, Network and the system locale.
 version: 0.0.1
-authors:
-  -Sanuraj
-  -Siddhant
 homepage: https://github.com/SanurajMekkoth/DefaultCountryCode
 
 environment:
