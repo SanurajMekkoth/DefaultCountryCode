@@ -43,8 +43,8 @@ class _MyAppState extends State<MyApp> {
   Future<void> getNetworkCountryCode() async {
     String country;
     try {
-      country =
-          await DefaultCountryCode.detectNetworkCountry ?? 'Unknown Country code';
+      country = await DefaultCountryCode.detectNetworkCountry ??
+          'Unknown Country code';
     } on PlatformException {
       country = 'Failed to get country code.';
     }
@@ -56,12 +56,11 @@ class _MyAppState extends State<MyApp> {
     });
   }
 
-
   Future<void> getLocaleCountryCode() async {
     String country;
     try {
-      country =
-          await DefaultCountryCode.detectLocaleCountry ?? 'Unknown Country code';
+      country = await DefaultCountryCode.detectLocaleCountry ??
+          'Unknown Country code';
     } on PlatformException {
       country = 'Failed to get country code.';
     }
@@ -85,9 +84,15 @@ class _MyAppState extends State<MyApp> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text('Country code name', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),),
-              SizedBox(height: 20,),
-              Text('SIM: $_simCountry\n\nNetwork: $_networkCountry\n\nLocale: $_localeCountry\n'),
+              Text(
+                'Country code name',
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Text(
+                  'SIM: $_simCountry\n\nNetwork: $_networkCountry\n\nLocale: $_localeCountry\n'),
             ],
           ),
         ),
