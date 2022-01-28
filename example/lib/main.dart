@@ -1,3 +1,4 @@
+import 'package:default_country_code/views/country_code_picker.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:default_country_code/default_country_code.dart';
@@ -69,7 +70,8 @@ class _MyAppState extends State<MyApp> {
               ),
               Text(
                   'SIM: $_simCountry\n\nNetwork: $_networkCountry\n\nLocale: $_localeCountry\n'),
-              // ElevatedButton(onPressed: () {}, child: Text("Show Country Code"))
+              // ElevatedButton(onPressed: () {}, child: Text("Show Country Code")),
+              CountryCodePicker(),
             ],
           ),
         ),
