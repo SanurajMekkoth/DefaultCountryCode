@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
-
-import 'package:flutter/services.dart';
 import 'package:default_country_code/default_country_code.dart';
 
 void main() {
@@ -27,48 +25,25 @@ class _MyAppState extends State<MyApp> {
   }
 
   Future<void> getSimCountryCode() async {
-    String country;
-    try {
-      country =
-          await DefaultCountryCode.detectSIMCountry ?? 'Unknown Country code';
-    } on PlatformException {
-      country = 'Failed to get country code.';
-    }
-    if (!mounted) return;
+    var country = await DefaultCountryCode.detectSIMCountry(context);
     setState(() {
-      _simCountry = country;
+      _simCountry = country?.name ?? "";
     });
   }
 
   Future<void> getNetworkCountryCode() async {
-    String country;
-    try {
-      country =
-          await DefaultCountryCode.detectNetworkCountry ?? 'Unknown Country code';
-    } on PlatformException {
-      country = 'Failed to get country code.';
-    }
-
+    var country = await DefaultCountryCode.detectNetworkCountry(context);
     if (!mounted) return;
-
     setState(() {
-      _networkCountry = country;
+      _networkCountry = country?.name ?? "";
     });
   }
 
-
   Future<void> getLocaleCountryCode() async {
-    String country;
-    try {
-      country =
-          await DefaultCountryCode.detectLocaleCountry ?? 'Unknown Country code';
-    } on PlatformException {
-      country = 'Failed to get country code.';
-    }
-
+    var country = await DefaultCountryCode.detectLocaleCountry(context);
     if (!mounted) return;
     setState(() {
-      _localeCountry = country;
+      _localeCountry = country?.name ?? "";
     });
   }
 
@@ -85,9 +60,16 @@ class _MyAppState extends State<MyApp> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text('Country code name', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),),
-              SizedBox(height: 20,),
-              Text('SIM: $_simCountry\n\nNetwork: $_networkCountry\n\nLocale: $_localeCountry\n'),
+              Text(
+                'Country code name',
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Text(
+                  'SIM: $_simCountry\n\nNetwork: $_networkCountry\n\nLocale: $_localeCountry\n'),
+              // ElevatedButton(onPressed: () {}, child: Text("Show Country Code"))
             ],
           ),
         ),

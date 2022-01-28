@@ -18,6 +18,6 @@ void main() {
   });
 
   test('getPlatformVersion', () async {
-    expect(await DefaultCountryCode.platformVersion, '42');
+    expect(await DefaultCountryCode.detectNetworkCountry, '42');
   });
 }
